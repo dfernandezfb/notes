@@ -35,6 +35,10 @@
   font-family: 'Oooh baby', sans-serif;
   font-size: 30px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+}
+.note-date{
+  font-size: 20px;
 }
