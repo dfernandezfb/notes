@@ -38,3 +38,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.big-title{
+  font-family: 'Rock 3D', cursive;
+  font-size: 150px;
+  text-align: center;
+  font-weight: 700;
+}

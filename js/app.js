@@ -63,3 +63,6 @@ const addNote = (event) => {
   document.querySelector('form').reset();
   exampleNote.innerText = 'Escriba una nota';
 }
+
+
+//* Empezá a hacer el login, solo el html y css por ahora (DIEGO)
