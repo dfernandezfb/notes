@@ -12,21 +12,18 @@
 
 let notes = JSON.parse(localStorage.getItem('notes'));
 if(!notes){
-  notes=[{
-    id:1,
-    text:'hola',
-    date:new Date()
-  }];
+  notes=[];
   localStorage.setItem('notes',JSON.stringify(notes));
 }
 
-notes.forEach(noteText =>{
+notes.forEach(noteItem =>{
   const note = document.createElement('div');
   note.innerHTML = `
-  <div><button>X</button></div>
-  <div>${noteText.text}</div>
-  <div class="note-date">Creado: ${noteText.date}</div>
+  <div class="delete-button"><button class="btn btn-danger">X</button></div>
+  <div>${noteItem.text}</div>
+  <div class="note-date">Creador:${noteItem.creator}<br>${new Date(noteItem.date)}</div>
   `;
+  note.id=noteItem.id;
   note.classList.add('note-style','m-3')
   const noteContainer = document.querySelector('.tablero');
   noteContainer.appendChild(note);
@@ -54,6 +51,7 @@ notes.forEach(noteText =>{
 //* Tomar los datos del formulario e ir mostrandolos en notita de ejemplo
 
 const noteContent = document.querySelector('#note-text');
+const noteCreator = document.querySelector('#note-creator');
 const exampleNote = document.querySelector('#note-example');
 
 noteContent.addEventListener('keyup',()=>{
@@ -85,6 +83,7 @@ const addNote = (event) => {
   //! Editamos los datos que trajimos con la nueva nota
   let newNote = {
     id:notesLS.length+1,
+    creator:noteCreator.value,
     text:noteContent.value,
     date:new Date()
   }
@@ -95,10 +94,11 @@ const addNote = (event) => {
   //TODO Mostrar la nueva nota en el DOM
   const note = document.createElement('div');
   note.innerHTML =`
-  <div><button>X</button></div>
+  <div class="delete-button"><button class="btn btn-danger">X</button></div>
   <div>${newNote.text}</div>
-  <div class="note-date">Creado: ${newNote.date}</div>
+  <div class="note-date">Creador:${newNote.creator}<br>${newNote.date}</div>
   `;
+  note.id= newNote.id;
   note.classList.add('note-style','m-3')
   const noteContainer = document.querySelector('.tablero');
   noteContainer.appendChild(note);
@@ -109,5 +109,15 @@ const addNote = (event) => {
 }
 
 
-//* Agregar botón para eliminar //GABRIEL
+//* Agregar botón para eliminar y eliminar//GABRIEL
 
+//!EMPEZAR POR DIEGO
+
+//? IMAGINACION
+/*?
+notes=['Hola', 'Hola Mundo', 'Hello world', 'Hi world', 'Sayonara', 'Hello world']
+
+event.target.innerText --> 'Hello world'notes
+
+notes.filter(note=> note=== 'Hello world');
+*/

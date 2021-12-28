@@ -40,5 +40,14 @@
   align-items: center;
 }
 .note-date{
-  font-size: 20px;
+  font-size: 10px;
+  font-family: monospace;
+  text-align: center;
+}
+.delete-button{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-right: 5px;
+  padding-top: 5px;
 }
