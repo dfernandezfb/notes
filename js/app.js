@@ -121,3 +121,4 @@ event.target.innerText --> 'Hello world'notes
 
 notes.filter(note=> note=== 'Hello world');
 */
+//* Empezá a hacer el login, solo el html y css por ahora (DIEGO)

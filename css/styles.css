@@ -51,3 +51,9 @@
   padding-right: 5px;
   padding-top: 5px;
 }
+.big-title{
+  font-family: 'Rock 3D', cursive;
+  font-size: 150px;
+  text-align: center;
+  font-weight: 700;
+}
