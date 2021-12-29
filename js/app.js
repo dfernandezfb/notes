@@ -19,7 +19,7 @@ if(!notes){
 notes.forEach(noteItem =>{
   const note = document.createElement('div');
   note.innerHTML = `
-  <div class="delete-button"><button class="btn btn-danger">X</button></div>
+  <div class="delete-button"><button onclick="deleteNote(${noteItem.id})" class="btn btn-danger">X</button></div>
   <div>${noteItem.text}</div>
   <div class="note-date">Creador:${noteItem.creator}<br>${new Date(noteItem.date)}</div>
   `;
@@ -94,7 +94,7 @@ const addNote = (event) => {
   //TODO Mostrar la nueva nota en el DOM
   const note = document.createElement('div');
   note.innerHTML =`
-  <div class="delete-button"><button class="btn btn-danger">X</button></div>
+  <div class="delete-button"><button onclick="deleteNote(${newNote.id})" class="btn btn-danger">X</button></div>
   <div>${newNote.text}</div>
   <div class="note-date">Creador:${newNote.creator}<br>${newNote.date}</div>
   `;
@@ -110,6 +110,31 @@ const addNote = (event) => {
 
 
 //* Agregar botón para eliminar y eliminar//GABRIEL
+//!Forma tambien valida de obtener el id del elemento a borrar
+// const deleteNote = (event) =>{
+//   console.log(event.target.parentElement.parentElement.id);
+
+//   //TODO Borrar del DOM
+//   // document.getElementById('')
+//   //TODO Borrar de LS
+// } 
+
+const deleteNote = (id) =>{
+  //TODO Borrar del DOM
+  const noteContainer = document.querySelector('.tablero');
+  const noteToRemove = document.getElementById(id);
+  noteContainer.removeChild(noteToRemove);
+  // document.getElementById('')
+  //TODO Borrar de LS
+  //!Traer la informacion
+  let notesLS = JSON.parse(localStorage.getItem('notes'));
+  //!Modificar la informacion
+  notesLS = notesLS.filter(noteLS=>noteLS.id!=id);
+  //!Volver a subir
+  localStorage.setItem('notes',JSON.stringify(notesLS));
+} 
+
+
 
 //!EMPEZAR POR DIEGO
 
