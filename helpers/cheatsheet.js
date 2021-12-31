@@ -183,4 +183,35 @@ let notasLS = JSON.stringify(notas);
 //"['Hola','Hola mundo','Hola mundazo', 'Hi world','Nota nueva']"
 localStorage.setItem('notas',notasLS);
 
-//ASINCRONISMO
+//! ASINCRONISMO
+
+async - await
+
+async function funcionAsincronica(){
+  await setTimeout
+  await fetch //ESPERALO QUE TERMINE
+}
+
+await fetch('http://localhost:3000/users/'); //!PEDIDO GET QUE TRAE TODOS LOS USUARIOS
+
+await fetch('http://localhost:3000/users/'+ user.id); //! PEDIDO QUE TRAE EL USUARIO CON EL ID ESPECIFICADO
+
+await fetch('http://localhost:3000/users/'+ user.id,{  //!PEDIDO PUT PARA EDITAR EL USUARIO CON EL ID ESPECIFICADO
+    method:'PUT',
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify(user)
+  });
+
+await fetch('http://localhost:3000/users/',{ //! CREA UN USUARIO NUEVO
+    method:'CREATE',
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify(user)
+  });
+
+await fetch('http://localhost:3000/users/'+ user.id,{  //! BORRA EL USUARIO CON EL ID ESPECIFICADO
+    method:'DELETE'
+  });
