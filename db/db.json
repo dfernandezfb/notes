@@ -6,22 +6,16 @@
       "password": "123456",
       "notes": [
         {
-          "id": 2,
-          "creator": "Diego",
-          "text": "Felices vacaciones",
-          "date": "2021-12-30T23:58:40.362Z"
+          "id": 5000,
+          "creator": "asd",
+          "text": "dsa",
+          "date": "2022-02-01T21:41:39.924Z"
         },
         {
-          "id": 2,
-          "creator": "asdasd",
-          "text": "asdasdasd",
-          "date": "2021-12-31T00:04:55.638Z"
-        },
-        {
-          "id": 3,
-          "creator": "asdasdasd",
-          "text": "asdasdasdasd",
-          "date": "2021-12-31T00:05:16.324Z"
+          "id": 5000,
+          "creator": "Gabriel Fernández",
+          "text": "aaaaaa",
+          "date": "2022-02-01T21:45:35.403Z"
         }
       ]
     },

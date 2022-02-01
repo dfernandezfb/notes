@@ -46,8 +46,7 @@ const login = async (event) =>{
     const data = await response.json();
     let user = data.find(item=>item.user === userInput.value);
     if(user?.password === passInput.value){
-      localStorage.setItem('notes',JSON.stringify(user.notes));
-      localStorage.setItem('user',JSON.stringify(user));
+      localStorage.setItem('id',JSON.stringify(user.id));
       window.location.assign(window.location.origin + '/main.html');
     }else{
       document.getElementById('msg').style.display='block'
